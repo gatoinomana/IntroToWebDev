@@ -8,10 +8,69 @@
             <h1>Contact Me</h1>
         </header>
         <nav>
-            <a href="index.html"><img src="images/about.jpg" alt="home"/></a>
+            <hr />
+            <p><a href="index.html">Home</a></p>
+            <hr />
         </nav>
         <section>
-            <p>Page Under Construction</p>
+            <form>
+                <h2>Information Request</h2>
+
+                <label for="firstName">First Name:</label> <br />
+                <input type="text" name="firstName" id="firstName"/> <br />
+
+                <label for="lastName">Last Name:</label> <br />
+                <input type="text" name="lastName" id="lastName"/> <br />
+
+                <label for="phone">Phone Number:</label> <br />
+                <input type="text" name="phone" id="phone"/> <br />
+
+                <label for="contact">Best time to call:</legend> <br />
+                <select name="contact" id="contact">
+                    <option value="default" selected>
+                        -Select one-
+                    </option>
+                    <option value="morning">
+                        Morning (8AM to 12PM Eastern)
+                    </option>
+                    <option value="afternoon">
+                        Afternoon (12PM to 5PM Eastern)
+                    </option>
+                    <option value="evening">
+                        Evening (5PM to 8PM Eastern)
+                    </option>
+                </select>
+
+                <fieldset>
+                    <legend>I am interested in (check all that apply)</legend> <br />
+
+                    <input type="checkbox" name="interest" id="frontEnd" value="Front-End Web Development"/>
+                    <label for="frontEnd">Front-End Web Development</label> <br />
+
+                    <input type="checkbox" name="interest" id="backEnd" value="Back-End Web Development"/>
+                    <label for="backEnd">Back-End Web Development</label> <br />
+
+                    <input type="checkbox" name="interest" id="database" value="Database Design"/>
+                    <label for="database">Database Design</label> <br />
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>I have filled in the client questionnaire form:</legend> <br />
+
+                    <input id="choiceOne" type="radio" name="questionnaire" value="Yes"/>
+                    <label for="choiceOne">Yes</label> <br />
+
+                    <input id="choiceTwo" type="radio" name="questionnaire" value="No" />
+                    <label for="choiceTwo">No</label> <br />
+                </fieldset>
+
+                <label for="info">Additional information:</label> <br />
+                <textarea id="info" name="info"></textarea> <br />
+
+                <input type="submit"/>
+            </form>
+            <hr />
         </section>
         <footer>
 
