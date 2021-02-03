@@ -9,6 +9,8 @@
         <title>Noelia Martinez's Portfolio</title>
         <link href="styles/main.css" rel="stylesheet" type="text/css" />
         <style>
+            /* Table styles */
+
             caption {
                 font-weight: bold;
                 font-size: 1.2em;
@@ -38,6 +40,7 @@
             tbody tr:nth-child(odd) {
                 background-color:#e4c3ad;
             }
+
         </style>
     </head>
     <body>
@@ -48,6 +51,7 @@
             <p><a href="portfolio.html">Projects</a></p>
             <p><a href="contact.html">Contact Me</a></p>
             <p><a href="testimonials.html">Testimonials</a></p>
+            <div class="clear-float"></div>
         </nav>
         <section>
             <article class="border" id="about">
@@ -56,63 +60,70 @@
                 <p>I am a <strong>Computer Science graduate</strong> from Spain, now based in the UK.</p>
                 <p>I am looking for my first job as a software developer.</p>
             </article>
+            <div class="clear-float"></div>
             <article id="experience">
                 <h2><em>Past Experiences</em></h2>
                 <img src="images/experiences.jpg" alt="illustration of two computers showing code and a website respectively"/>
-                <table>
-                    <caption>Employment History</caption>
-                    <thead>
-                        <tr>
-                            <th>Years of Employment</th>
-                            <th>Title</th>
-                            <th>Company</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>2018-Present</td>
-                            <td>Apprentice</td>
-                            <td>The Software Guild</td>
-                        </tr>
-                        <tr>
-                            <td>2012-2018</td>
-                            <td>Clerk</td>
-                            <td>United Shipping Services</td>
-                        </tr>
-                        <tr>
-                            <td>2007-2012</td>
-                            <td>Student</td>
-                            <td>State University</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="right-content">
+                    <table>
+                        <caption>Employment History</caption>
+                        <thead>
+                            <tr>
+                                <th>Years of Employment</th>
+                                <th>Title</th>
+                                <th>Company</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2018-Present</td>
+                                <td>Apprentice</td>
+                                <td>The Software Guild</td>
+                            </tr>
+                            <tr>
+                                <td>2012-2018</td>
+                                <td>Clerk</td>
+                                <td>United Shipping Services</td>
+                            </tr>
+                            <tr>
+                                <td>2007-2012</td>
+                                <td>Student</td>
+                                <td>State University</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="clear-float"></div>
             </article>
             <article id="hobbies">
                 <h2><em>Hobbies</em></h2>
                 <img src="images/hobbies.jpg" alt="closeup picture of a tabletop game" />
-                <ul>
-                    <li>My favorite board games:</li>
-                    <ol>
-                        <li>Codenames</li>
-                        <li>Concordia</li>
-                        <li>Targi</li>
-                    </ol>
-                    <li>My favorite video games:</li>
-                    <ol>
-                        <li>Overcooked</li>
-                        <li>Ori and the Will of the Wisps</li>
-                        <li>Ori and the Blind Forest</li>
-                        <li>Ooblets</li>
-                    </ol>
-                </ul>
-                <ul>
-                    <li>Other hobbies:</li>
+                <div class="right-content">
                     <ul>
-                        <li>Cooking</li>
-                        <li>Reading</li>
-                        <li>Running</li>
+                        <li>My favorite board games:</li>
+                        <ol>
+                            <li>Codenames</li>
+                            <li>Concordia</li>
+                            <li>Targi</li>
+                        </ol>
+                        <li>My favorite video games:</li>
+                        <ol>
+                            <li>Overcooked</li>
+                            <li>Ori and the Will of the Wisps</li>
+                            <li>Ori and the Blind Forest</li>
+                            <li>Ooblets</li>
+                        </ol>
                     </ul>
-                </ul>
+                    <ul>
+                        <li>Other hobbies:</li>
+                        <ul>
+                            <li>Cooking</li>
+                            <li>Reading</li>
+                            <li>Running</li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class="clear-float"></div>
             </article>
         </section>
         <footer>
