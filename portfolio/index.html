@@ -1,57 +1,90 @@
 <!DOCTYPE html>
 <!--
-    Name: Noelia Martinez
-    Date Created: Mon 1 feb 2021
-    Most recent revision: Mon 1 feb 2021
+    Creator: Noelia Martinez
+    Date created: 01/02/2021
+    Last modified: 03/02/2021
 -->
 <html lang="en">
     <head>
         <title>Noelia Martinez's Portfolio</title>
+        <link href="styles/main.css" rel="stylesheet" type="text/css" />
+        <style>
+            caption {
+                font-weight: bold;
+                font-size: 1.2em;
+                margin-bottom: 8px;
+            }
+
+            table, th, td {
+                border: 1px solid #0d1f2d;
+                border-collapse: collapse;
+                padding: 5px 10px;
+            }
+
+            table {
+                width: 90%;
+                margin: auto;
+            }
+            
+            tr {
+                height: 30px;
+            }
+
+            thead {
+                background-color: #546a7b;
+                color: #f2eded;
+            }
+
+            tbody tr:nth-child(odd) {
+                background-color:#e4c3ad;
+            }
+        </style>
     </head>
     <body>
         <header>
             <h1>Portfolio for Noelia Martinez</h1>
         </header>
         <nav>
-            <hr />
-            <p><a href="">Home</a></p>
-            <p><a href="projects.html">Projects</a></p>
+            <p><a href="portfolio.html">Projects</a></p>
             <p><a href="contact.html">Contact Me</a></p>
             <p><a href="testimonials.html">Testimonials</a></p>
-            <hr />
         </nav>
         <section>
-            <article id="about-me">
+            <article class="border" id="about">
                 <h2><em>About Me</em></h2>
                 <img src="images/about.jpg" alt="picture of a cat covering its face"/>
                 <p>I am a <strong>Computer Science graduate</strong> from Spain, now based in the UK.</p>
                 <p>I am looking for my first job as a software developer.</p>
             </article>
-            <article id="past-experiences">
+            <article id="experience">
                 <h2><em>Past Experiences</em></h2>
                 <img src="images/experiences.jpg" alt="illustration of two computers showing code and a website respectively"/>
-                <table border="1">
+                <table>
                     <caption>Employment History</caption>
-                    <tr>
-                        <th>Years of Employment</th>
-                        <th>Title</th>
-                        <th>Company</th>
-                    </tr>
-                    <tr>
-                        <td>2018-Present</td>
-                        <td>Apprentice</td>
-                        <td>The Software Guild</td>
-                    </tr>
-                    <tr>
-                        <td>2012-2018</td>
-                        <td>Clerk</td>
-                        <td>United Shipping Services</td>
-                    </tr>
-                    <tr>
-                        <td>2007-2012</td>
-                        <td>Student</td>
-                        <td>State University</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Years of Employment</th>
+                            <th>Title</th>
+                            <th>Company</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2018-Present</td>
+                            <td>Apprentice</td>
+                            <td>The Software Guild</td>
+                        </tr>
+                        <tr>
+                            <td>2012-2018</td>
+                            <td>Clerk</td>
+                            <td>United Shipping Services</td>
+                        </tr>
+                        <tr>
+                            <td>2007-2012</td>
+                            <td>Student</td>
+                            <td>State University</td>
+                        </tr>
+                    </tbody>
                 </table>
             </article>
             <article id="hobbies">
@@ -83,7 +116,6 @@
             </article>
         </section>
         <footer>
-            <hr />
             <p>&copy; 2021 Noelia Martinez. All Rights Reserved</p>
         </footer>
     </body>
