@@ -21,7 +21,9 @@ for (var n = 1; n <= 7; n++) {
 // Print each number to the JavaScript console.
 console.log("FOR ONE TO TEN");
 // Write your code here:
-
+for(let i = 1; i <= 10; i++) {
+    console.log(i);
+}
 
 
 // 2. COUNT BY TWOS FROM TWO TO TWELVE
@@ -39,7 +41,9 @@ console.log("FOR ONE TO TEN");
 // 12
 console.log("COUNT BY TWOS FROM TWO TO TWELVE");
 // Write your code here:
-
+for(let i = 2; i <= 12; i+=2) {
+    console.log(i);
+}
 
 
 // 3. COUNT BACKWARD FROM SIX
@@ -58,7 +62,9 @@ console.log("COUNT BY TWOS FROM TWO TO TWELVE");
 // 0
 console.log("COUNT BACKWARD FROM SIX");
 // Write your code here:
-
+for(let i = 6; i >= 0; i--) {
+    console.log(i);
+}
 
 
 // 4. SUM EVENS
@@ -77,6 +83,11 @@ var sum = 0;    // We add even numbers to this variable.
 // What happens if you set limit to a negative number?
 console.log("SUM EVENS");
 // Write your code here:
+for(let i = 0; i <= limit; i++) {
+    if (i % 2 === 0) {
+        sum += i;
+    }
+}
 
 console.log("limit = %s, sum = %s", limit, sum);
 
@@ -94,17 +105,61 @@ var kaisFavoriteNumber = 44;    // Kai's favorite number
 // Try adding a third, or forth, or fifth favorite number!
 console.log("FIND A FAVORITE NUMBER");
 // Write your code here:
+for(var i = 0; i !== winniesFavoriteNumber && i !== kaisFavoriteNumber; i++) {
+}
 
+console.log(i);
 
 
 // CHALLENGE: WHILE LOOPS
 // ======================
 // Try solving the five tasks above with a while loop in place of a for loop.
 
+// 1. FOR ONE TO TEN
+console.log("FOR ONE TO TEN - WHILE");
+i = 1;
+while (i <= 10) {
+    console.log(i);
+    i++;
+}
 
+// 2. COUNT BY TWOS FROM TWO TO TWELVE
+console.log("COUNT BY TWOS FROM TWO TO TWELVE - WHILE");
+i = 2;
+while (i <= 12) {
+    console.log(i);
+    i+=2;
+}
 
+// 3. COUNT BACKWARD FROM SIX
+console.log("COUNT BACKWARD FROM SIX - WHILE");
+i = 6;
+while (i >= 0) {
+    console.log(i);
+    i--;
+}
 
+// 4. SUM EVENS
+console.log("SUM EVENS - WHILE");
+i = 0;
+sum = 0;
+while (i <= limit) {
+    if (i % 2 === 0) {
+        sum += i;
+    }
+    i++;
+}
 
+console.log("limit = %s, sum = %s", limit, sum);
+
+// 5. FIND A FAVORITE NUMBER
+console.log("FIND A FAVORITE NUMBER - WHILE");
+i = 0;
+while (i !== winniesFavoriteNumber && i !== kaisFavoriteNumber) {
+    i++;
+}
+
+console.log(i);
 
 /**********************************
  * The Software Guild
