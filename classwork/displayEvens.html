@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODE PRACTICE: Display Evens</title>
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+    crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>CODE PRACTICE: Display Evens</h1>
+        <form name="displayEvens" class="needs-validation" onsubmit="return validate();" 
+            onreset="resetView();" novalidate>
+
+            <!-- Input for Starting Number -->
+            <div class="form-row">
+                
+                <div class="form-group col-bg-5">
+                    <label for="startInput">Starting Number</label>
+                    <input id="startInput" type="number" class="form-control" required>
+
+                    <div class="invalid-feedback">
+                        Starting Number is required and must be a number
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input for Ending Number -->
+            <div class="form-row">
+                <div class="form-group col-bg-5">
+                    <label for="endInput">Ending Number</label>
+                    <input id="endInput" type="number" class="form-control" required>
+
+                    <div class="invalid-feedback">
+                        Ending Number is required and must be a number less than or equal to Starting Number
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input for Step -->
+            <div class="form-row">
+                <div class="form-group col-bg-5">
+                    <label for="stepInput">Step</label>
+                    <input id="stepInput" type="number" class="form-control" required>
+
+                    <div class="invalid-feedback">
+                        Step is required and must be a positive number
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-row">
+                <div class="form-group col">
+                    <button type="submit" id="submitButton" class="btn btn-primary">Display Evens</button>
+                </div>
+            </div>
+        </form>
+
+        <article id="results" style="display: none">
+            <p>Here are the even numbers between <span id="start"></span> and <span id="end"></span> by <span id="step"></span>'s:</p>
+            <p id="range"></p>
+        </article>
+    <script src="displayEvens.js"></script>
+</body>
+</html>
