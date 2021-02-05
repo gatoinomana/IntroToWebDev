@@ -15,7 +15,7 @@
                 padding-bottom: 12px;
             }
 
-            nav .btn {
+            nav .btn, .card-body, .card-body a {
                 background-color: #5b7d87;
                 color: #fef9ff; 
             }
@@ -23,6 +23,12 @@
             nav .btn:hover {
                 font-weight: bold;
             }
+
+            .card-header .btn-link{
+                background-color: #fef9ff; 
+                color: #0d1f2d;
+            }
+
         </style>
 	</head>
 	<body>
@@ -38,6 +44,7 @@
                 <a class="btn badge-pill" href="portfolio.html">Projects</a>
             </nav>
 
+            <!-- Bio -->
             <div class="row">
                 <div class="col-lg-3 col-md-4">
                     <!-- div for picture -->
@@ -49,6 +56,55 @@
                     <p>Proin convallis orci at venenatis euismod. In rhoncus ligula non nibh pellentesque rutrum. Nunc vel mauris diam.</p>
                 </div>
             </div>
+
+            <!-- Accordion -->
+            <div class="row">
+                <div class="accordion" id="accordionExample">
+
+                    <!-- Card 1 -->
+                    <div class="card">
+
+                        <!-- Card 1 header -->
+                        <div class="card-header" id="portfolio01">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    My First Portfolio Piece
+                                </button>
+                            </h5>
+                        </div>
+
+                        <!-- Card 1 body -->
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne">
+                            <div class="card-body">
+                                <p><a href="" target="_blank">Name of Website</a></p>
+                                <figure><img src="images/website-1778529_640.png" alt="Screenshot of home page" /></figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="card">
+
+                        <!-- Card 2 header -->
+                        <div class="card-header" id="portfolio02">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    My Second Portfolio Piece
+                                </button>
+                            </h5>
+                        </div>
+
+                        <!-- Card 2 body -->
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
+                            <div class="card-body">
+                                <p><a href="" target="_blank">Name of Website</a></p>
+                                <figure><img src="images/website-1778529_640.png" alt="Screenshot of home page" /></figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
 
