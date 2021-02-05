@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODE PRACTICE: Lucky Sevens</title>
+    <link rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+        crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <h1>Lucky Sevens</h1>
+        <form name="luckySevens" class="needs-validation" onsubmit="return validate();" novalidate>
+
+            <!-- Input -->
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="bet" class="col-form-label">Starting Bet: </label>
+                    
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </div>
+                        <input id="bet" type="number" value="0.00" step=".01" class="form-control" required>
+
+                        <div class="invalid-feedback">
+                            Starting Bet is required and must be a positive number
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Play Button -->
+            <div class="form-row">
+                <div class="form-group col">
+                    <button type="submit" id="submitButton" class="btn btn-primary">Play</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="luckySevens.js"></script>
+</body>
+</html>
