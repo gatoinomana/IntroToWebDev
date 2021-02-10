@@ -1,106 +1,173 @@
 <!DOCTYPE html>
+<!--
+    Creator: Noelia Martinez
+    Date created: 08/02/2021
+    Last modified: 10/02/2021
+-->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-</head>
-<body>
-    <header>
-        <h1>The Victorian</h1>
-    </header>
-    <nav>
-        <hr />
-        <p><a href="index.html">Home</a></p>
-        <p><a href="">Menu</a></p>
-        <p><a href="contact.html">Contact Us</a></p>
-        <hr />
-    </nav>
-    <section>
-        <article id="burger-fries">
-            <h3 class="menu-item-name">Burger and Fries</h3>
-            <section class="menu-item-description">
-                <h4>An American Classic!</h4>
-                <p>Your choice - with or without cheese</p>
-                <p>Pickle, onion, tomato, and lettuce</p>
-                <p>Served with our famous thick cut french fries</p>
-            </section>
-            <section class="menu-item-price">
-                <p>&#36; 7.95</p>
-            </section>
-        </article>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Menu</title>
 
-        <article id="hot-dog">
-            <h3 class="menu-item-name">Hot Dog and Chips</h3>
-            <section class="menu-item-description">
-                <h4>A Summer Classic!</h4>
-                <p>Your choice - white or wheat bun</p>
-                <p>Relish, mustard, and ketchup</p>
-                <p>Served with our house-made chips</p>
-            </section>
-            <section class="menu-item-price">
-                <p>&#36; 7.95</p>
-            </section>
-        </article>
+        <!-- Bootstrap CSS styles CDN links copied from https://getbootstrap.com/docs/4.1/getting-started/download/-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        
+        <!-- External style sheet -->
+        <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css"/>
+        
+        <!-- Default font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+        <!-- Restaurant name font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Modern+Antiqua&family=Noto+Sans+JP:wght@100;300&display=swap" rel="stylesheet">
+        <!-- Headings font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap" rel="stylesheet">
+        
+        <!-- Font Awesome icons -->
+        <script src="https://kit.fontawesome.com/ec66112225.js" crossorigin="anonymous"></script>
+        <style>
+            section {
+                background-color: #F2ECE3;
+            }
 
-        <article id="italian-sausage">
-            <h3 class="menu-item-name">Italian Sausage and Peppers</h3>
-            <section class="menu-item-description">
-                <h4>An All-Time Favorite</h4>
-                <p>Your choice - mild or spicy Cole Slaw</p>
-                <p>Served with garlic mashers</p>
-            </section>
-            <section class="menu-item-price">
-                <p>&#36; 10.95</p>
-            </section>
-        </article>
-    
-        <article id="tenderloin-sandwich">
-            <h3 class="menu-item-name">Tenderloin Sandwich and Chips</h3>
-            <section class="menu-item-description">
-                <h4>Really Hits the Spot</h4>
-                <p>Plain or Sesame Seed Bun</p>
-                <p>Pickle, onion, tomato, and lettuce</p>
-                <p>Served with our house-made chips</p>
-            </section>
-            <section class="menu-item-price">
-                <p>&#36; 8.95</p>
-            </section>
-        </article>
+            h2 {
+                margin: 15px 0px 15px 0px;
+                border-bottom: medium solid #C7A97F;
+            }
 
-        </article>
-        <article id="house-salad">
-            <h3 class="menu-item-name">House Salad</h3>
-            <section class="menu-item-description">
-                <h4>On the Lighter Side</h4>
-                <p>Your choice - with or without cheese</p>
-                <p>Iceberg lettuce, tomatoes, peppers</p>
-                <p>Thousand Island or Ranch</p>
-                <p>Dressing served with a dinner roll</p>
-            </section>
-            <section class="menu-item-price">
-                <p>&#36; 6.95</p>
-            </section>
-        </article>
+            section.meal-description p {
+                margin-bottom: 0px;
+            }
 
-        <article id="brisket-sandwich">
-            <h3 class="menu-item-name">Brisket Sandwich and Fries</h3>
-            <section class="menu-item-description">
-                <h4>A Taste of Texas!</h4>
-                <p>Smoked Brisket on thick-cut</p>
-                <p>Texas Toast</p>
-                <p>Cole Slaw</p>
-                <p>Served with our famous thick-cut french fries</p>
-            </section>
-            <section class="menu-item-price">
-                <p>&#36; 7.95</p>
-            </section>
-        </article>
-    </section>
-    <footer>
-        <hr />
-        <p>1557 Sweetwood Drive, Boulder, Colorado, 80302</p>
-        <p>303-555-0136</p>
-    </footer>
-</body>
+            section.meal-price p, table tr td:nth-child(2) {
+                color: #3A4A9C;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>The Victorian</h1>
+        </header>
+        <nav>
+            <a class="btn badge-pill btn-outline-light" href="index.html">Home</a>
+            <a class="btn badge-pill btn-outline-light" href="">Menu</a>
+            <a class="btn badge-pill btn-outline-light" href="contact.html">Contact Us</a>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <!-- Menu -->
+                <section class="col-xl-10 col-xxl-8 mx-auto my-3 text-center">
+                    <!-- Meals -->
+                    <article>
+                        <h2>Meals</h2>
+                        <div class="container">
+                            <div class="row mx-auto my-3">
+                                <article class="col-sm-6 col-md-4" id="burger-fries">
+                                    <h4 class="meal-name">Burger and Fries</h4>
+                                    <section class="meal-description">
+                                        <p><em>An American Classic!</em></p>
+                                        <p>Your choice - with or without cheese</p>
+                                        <p>Pickle, onion, tomato, and lettuce</p>
+                                        <p>Served with our famous thick cut french fries</p>
+                                    </section>
+                                    <section class="meal-price">
+                                        <p>&#36; 7.95</p>
+                                    </section>
+                                </article>
+                                <article class="col-sm-6 col-md-4" id="hot-dog">
+                                    <h4 class="meal-name">Hot Dog and Chips</h4>
+                                    <section class="meal-description">
+                                        <p><em>A Summer Classic!</em></p>
+                                        <p>Your choice - white or wheat bun</p>
+                                        <p>Relish, mustard, and ketchup</p>
+                                        <p>Served with our house-made chips</p>
+                                    </section>
+                                    <section class="meal-price">
+                                        <p>&#36; 7.95</p>
+                                    </section>
+                                </article>
+                                <article class="col-sm-6 col-md-4" id="italian-sausage">
+                                    <h4 class="meal-name">Italian Sausage and Peppers</h4>
+                                    <section class="meal-description">
+                                        <p><em>An All-Time Favorite</em></p>
+                                        <p>Your choice - mild or spicy Cole Slaw</p>
+                                        <p>Served with garlic mashers</p>
+                                    </section>
+                                    <section class="meal-price">
+                                        <p>&#36; 10.95</p>
+                                    </section>
+                                </article>
+                                <article class="col-sm-6 col-md-4" id="tenderloin-sandwich">
+                                    <h4 class="meal-name">Tenderloin Sandwich and Chips</h4>
+                                    <section class="meal-description">
+                                        <p><em>Really Hits the Spot</em></p>
+                                        <p>Plain or Sesame Seed Bun</p>
+                                        <p>Pickle, onion, tomato, and lettuce</p>
+                                        <p>Served with our house-made chips</p>
+                                    </section>
+                                    <section class="meal-price">
+                                        <p>&#36; 8.95</p>
+                                    </section>
+                                </article>
+                                <article class="col-sm-6 col-md-4" id="house-salad">
+                                    <h4 class="meal-name">House Salad</h4>
+                                    <section class="meal-description">
+                                        <p><em>On the Lighter Side</em></p>
+                                        <p>Your choice - with or without cheese</p>
+                                        <p>Iceberg lettuce, tomatoes, peppers</p>
+                                        <p>Thousand Island or Ranch</p>
+                                        <p>Dressing served with a dinner roll</p>
+                                    </section>
+                                    <section class="meal-price">
+                                        <p>&#36; 6.95</p>
+                                    </section>
+                                </article>
+                                <article class="col-sm-6 col-md-4" id="brisket-sandwich">
+                                    <h4 class="meal-name">Brisket Sandwich and Fries</h4>
+                                    <section class="meal-description">
+                                        <p><em>A Taste of Texas!</em></p>
+                                        <p>Smoked Brisket on thick-cut</p>
+                                        <p>Texas Toast</p>
+                                        <p>Cole Slaw</p>
+                                        <p>Served with our famous thick-cut french fries</p>
+                                    </section>
+                                    <section class="meal-price">
+                                        <p>&#36; 7.95</p>
+                                    </section>
+                                </article>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Beverages -->
+                    <article>
+                        <h2>Beverages</h2>
+                        <table class="col-md-8 col-bg-6 mx-auto table table-borderless table-striped table-hover">
+                            <tbody>
+                                <tr>
+                                    <td>Root Beer</td><td>&#36; 3.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Bottled Water</td><td>&#36; 1.25</td>
+                                </tr>
+                                <tr>
+                                    <td>Lemonade</td><td>&#36; 1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Iced Tea</td><td>&#36; 1.25</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+                </section>
+            </div>
+        </div>
+        <footer>
+            <p><i class="fas fa-map-marker-alt"></i> 1557 Sweetwood Drive, Boulder, Colorado, 80302</p>
+            <p id="phone"><i class="fas fa-phone-square-alt"></i> 303-555-0136</p>
+        </footer>
+    </body>
 </html>

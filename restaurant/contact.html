@@ -1,87 +1,140 @@
 <!DOCTYPE html>
+<!--
+    Creator: Noelia Martinez
+    Date created: 08/02/2021
+    Last modified: 10/02/2021
+-->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-</head>
-<body>
-    <header>
-        <h1>The Victorian</h1>
-    </header>
-    <nav>
-        <hr />
-        <p><a href="index.html">Home</a></p>
-        <p><a href="menu.html">Menu</a></p>
-        <p><a href="">Contact Us</a></p>
-        <hr />
-    </nav>
-    <section>
-        <form>
-            <label for="name">Name:</label>
-            <input id="name" type="text" name="name" /> <br />
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Us</title>
 
-            <label for="email">Email:</label>
-            <input id="email" type="text" name="email" /> <br />
+        <!-- Bootstrap CSS styles CDN links copied from https://getbootstrap.com/docs/4.1/getting-started/download/-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        
+        <!-- External style sheet -->
+        <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css"/>
+        
+        <!-- Default font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+        <!-- Restaurant name font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Modern+Antiqua&family=Noto+Sans+JP:wght@100;300&display=swap" rel="stylesheet">
+        <!-- Headings font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap" rel="stylesheet">
+        
+        <!-- Font Awesome icons -->
+        <script src="https://kit.fontawesome.com/ec66112225.js" crossorigin="anonymous"></script>
+        <style>
+            label.required {
+                font-weight: bold;
+            }
 
-            <label for="phone">Phone:</label>
-            <input id="phone" type="text" name="phone" /> <br />
-
-            <label for="inquiry">Reason for Inquiry:</label>
-            <select id="inquiry" name="inquiry">
-                <option value="catering" selected>
-                    Catering
-                </option>
-                <option value="party">
-                    Private Party
-                </option>
-                <option value="feedback">
-                   Feedback
-                </option>
-                <option value="other">
-                    Other
-                </option>
-            </select> <br />
-
-            <label for="info">Additional information:</label>
-            <textarea id="info" name="info"></textarea> <br />
-
-            <fieldset>
-                <legend>Have you been to the restaurant?</legend> <br />
-
-                <input id="choiceOne" type="radio" name="visited" value="No" />
-                <label for="choiceOne">No</label> <br />
-
-                <input id="choiceTwo" type="radio" name="visited" value="Yes" />
-                <label for="choiceTwo">Yes</label> <br />
-            </fieldset>
-
-            <fieldset>
-                <legend>Best days to contact you:</legend> <br />
-
-                <input id="monday" type="checkbox" name="contact" value="Monday" />
-                <label for="monday">M</label>
-
-                <input id="tuesday" type="checkbox" name="contact" value="Tuesday" />
-                <label for="tuesday">T</label>
-
-                <input id="wednesday" type="checkbox" name="contact" value="Wednesday" />
-                <label for="wednesday">W</label>
-
-                <input id="thursday" type="checkbox" name="contact" value="Thursday" />
-                <label for="thursday">Th</label>
-
-                <input id="friday" type="checkbox" name="contact" value="Friday" />
-                <label for="friday">F</label>
-            </fieldset>
-
-            <input type="submit" value="Send Request"/>
-        </form>
-    </section>
-    <footer>
-        <hr />
-        <p>1557 Sweetwood Drive, Boulder, Colorado, 80302</p>
-        <p>303-555-0136</p>
-    </footer>
-</body>
+            input[type=submit] {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>The Victorian</h1>
+        </header>
+        <nav>
+            <a class="btn badge-pill btn-outline-light" href="index.html">Home</a>
+            <a class="btn badge-pill btn-outline-light" href="menu.html">Menu</a>
+            <a class="btn badge-pill btn-outline-light" href="">Contact Us</a>
+        </nav>
+        <div class="container mx-auto my-3">
+            <div class="row">
+                <div class="col-10 mx-auto alert alert-info" role="alert">
+                    Required fields are in bold.
+                </div>  
+                <form class="col-10 mx-auto">
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-4 text-sm-right required" for="name">Name:</label>
+                        <input class="form-control col-sm-8" id="name" type="text" name="name" required/>
+                    </div>
+    
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-4 text-sm-right required" for="email">Email:</label>
+                        <input class="form-control col-sm-8" id="email" type="text" name="email" placeholder="name@example.com" required/>
+                    </div>
+    
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-4 text-sm-right" for="phone">Phone:</label>
+                        <input class="form-control col-sm-8" id="phone" type="text" name="phone" />
+                    </div>
+    
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-4 text-sm-right required" for="inquiry">Reason for Inquiry:</label>
+                        <select class="form-control col-sm-8" id="inquiry" name="inquiry">
+                            <option value="catering" selected>Catering</option>
+                            <option value="party">Private Party</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select required>
+                    </div>
+    
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-4 text-sm-right" for="info">Additional information:</label>
+                        <textarea class="form-control col-sm-8" id="info" name="info"></textarea>    
+                    </div>
+    
+                    <fieldset class="form-group row">
+                        <label class="col-form-label col-sm-4 text-sm-right">Have you been to the restaurant?</label>
+    
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" id="choiceOne" type="radio" name="visited" value="No" />
+                            <label class="form-check-label" for="choiceOne">No</label>
+                        </div>
+    
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" id="choiceTwo" type="radio" name="visited" value="Yes" />
+                            <label class="form-check-label" for="choiceTwo">Yes</label>
+                        </div>
+                    </fieldset>
+    
+                    <fieldset class="form-group row">
+                        <label class="col-form-label col-sm-4 text-sm-right">Best days to contact you:</label>
+    
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" id="monday" type="checkbox" name="contact" value="Monday" />
+                            <label class="form-check-label" for="monday">M</label>
+                        </div>
+    
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" id="tuesday" type="checkbox" name="contact" value="Tuesday" />
+                            <label class="form-check-label" for="tuesday">T</label>
+                        </div>
+    
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" id="wednesday" type="checkbox" name="contact" value="Wednesday" />
+                            <label class="form-check-label" for="wednesday">W</label>
+                        </div>
+    
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" id="thursday" type="checkbox" name="contact" value="Thursday" />
+                            <label class="form-check-label" for="thursday">Th</label>
+                        </div>
+    
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" id="friday" type="checkbox" name="contact" value="Friday" />
+                            <label class="form-check-label" for="friday">F</label>
+                        </div>
+                    </fieldset>
+                    <div class="row">
+                        <input class="mx-auto btn badge-pill btn-outline-dark" type="submit" value="Send Request"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <footer>
+            <p><i class="fas fa-map-marker-alt"></i> 1557 Sweetwood Drive, Boulder, Colorado, 80302</p>
+            <p id="phone"><i class="fas fa-phone-square-alt"></i> 303-555-0136</p>
+        </footer>
+    </body>
 </html>

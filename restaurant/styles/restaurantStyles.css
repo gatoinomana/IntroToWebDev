@@ -1,0 +1,73 @@
+/* 
+COLOR PALETTE
+--------------
+- whitesmoke                default background; header, footer and nav text 
+- darkslategray             default text
+- #3A4A9C (soft navy)       default links
+- #9E006C (dark magenta)    visited links
+- #33364D (dark navy)       header, footer and nav background
+- #F0C800 (golden)          h1 text
+*/
+
+body {
+    font-family: 'Oxygen', sans-serif;
+    background-color: whitesmoke; 
+    color: darkslategray;
+}
+
+header, footer {
+    background-color: #33364D;
+    color: whitesmoke;
+    text-align: center;
+    margin: 0px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+header p, footer p {
+    margin: auto;
+    max-width: 90%;
+    font-size: 0.9em;
+}
+
+h1 {
+    color: #F0C800;
+    margin: 0px;
+}
+
+h1, h2 {
+    font-family: 'Modern Antiqua', cursive;  
+}
+
+h3, h4, h5, h6 {
+    font-family: 'Charm', cursive;
+}
+
+nav {
+    background-color: #33364D;
+    border-top: thick double #F0C800;
+    border-bottom: thick double #F0C800;
+    padding: 10px 30px 10px 30px;
+}
+
+a[href*="//"] { /* External links only (href containing '//' of 'http://' or 'https://' */
+    color: #3A4A9C;
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+a[href*="//"]:visited {
+    color: #9E006C;
+}
+
+a[href*="//"]:hover {
+    font-weight: bold;
+}
+
+a[href*="//"]:active {
+    text-decoration: none;
+}
+
+footer {
+    border-top: thick double #F0C800; 
+}

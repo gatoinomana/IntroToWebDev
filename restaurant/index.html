@@ -5,36 +5,60 @@
     Last modified: 10/02/2021
 -->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-</head>
-<body>
-    <header>
-        <h1>The Victorian</h1>
-    </header>
-    <nav>
-        <hr />
-        <p><a href="">Home</a></p>
-        <p><a href="menu.html">Menu</a></p>
-        <p><a href="contact.html">Contact Us</a></p>
-        <hr />
-    </nav>
-    <section>
-        <article id="description">
-            <img src="images/restaurant-cropped-small.jpg" alt="Restaurant interior">
-            <p>2018 National Burger Awards Winner and 2019 Food Awards Finalist in Colorado, The Victorian is a charismatic eatery and drinkery to indulge in mouthwatering meat classics, crunchy house-made chips and creative salads. Antique paintings adorn the walls, its large windows offering a delightful view of the surrounding nature. Established in 2010 by a young couple of chefs with a vision to offer gourmet-quality classics at an affordable price along natural scenery.</p>
-        </article>
-        <article id="reviews">
-            <h3>Read a recent review!</h3>
-            <p><a target="_blank" href="https://www.tripadvisor.co.uk/ShowUserReviews-g33447-d14794688-r741150955-Last_Stand_Tavern-Golden_Colorado.html">4-star taste, 1-star price</a></p>
-        </article>
-    </section>
-    <footer>
-        <hr />
-        <p>1557 Sweetwood Drive, Boulder, Colorado, 80302</p>
-        <p>303-555-0136</p>
-    </footer>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page</title>
+
+        <!-- Bootstrap CSS styles CDN links copied from https://getbootstrap.com/docs/4.1/getting-started/download/-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        
+        <!-- External style sheet -->
+        <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css"/>
+        
+        <!-- Default font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+        <!-- Restaurant name font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Modern+Antiqua&family=Noto+Sans+JP:wght@100;300&display=swap" rel="stylesheet">
+        <!-- Headings font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap" rel="stylesheet">
+
+        <!-- Font Awesome icons -->
+        <script src="https://kit.fontawesome.com/ec66112225.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div>
+            <header>
+                <h1>The Victorian</h1>
+            </header>
+            <nav>
+                <a class="btn badge-pill btn-outline-light" href="">Home</a>
+                <a class="btn badge-pill btn-outline-light" href="menu.html">Menu</a>
+                <a class="btn badge-pill btn-outline-light" href="contact.html">Contact Us</a>
+            </nav>
+            <div class="container">
+                <div class="row">
+                    <section class="col-12 col-sm-10 col-md-8 col-bg-6 mx-auto my-3">
+                        <article id="description">
+                            <img style="display: block; margin: 0px auto; padding-bottom: 20px; max-width: 100%;" src="images/restaurant-cropped-small.jpg" alt="Restaurant interior">
+                            <p><span style="font-family: 'Modern Antiqua', cursive; font-weight: bold;">The Victorian</span> is a charismatic eatery and drinkery to indulge in mouthwatering meat classics, crunchy house-made chips and creative salads. Antique paintings adorn the walls and its large windows offer a delightful view of the surrounding nature. Established in 2010 by a young couple of chefs with a vision to offer gourmet-quality classics at an affordable price along natural scenery.</p>
+                            <p style="text-align: center;"><i class="fas fa-medal"></i> <strong>2019 Food Awards Finalist in Colorado</strong></p>
+                            <p style="text-align: center;"><i class="fas fa-medal"></i> <strong>2018 National Burger Awards Winner</strong></p>
+                        </article>
+                        <article id="reviews" class="jumbotron">
+                            <h3>Read a recent review!</h3>
+                            <p><a target="_blank" href="https://www.tripadvisor.co.uk/ShowUserReviews-g33447-d14794688-r741150955-Last_Stand_Tavern-Golden_Colorado.html">4-star taste, 1-star price</a></p>
+                        </article>
+                    </section>
+                </div>
+            </div>
+            <footer>
+                <p><i class="fas fa-map-marker-alt"></i> 1557 Sweetwood Drive, Boulder, Colorado, 80302</p>
+                <p id="phone"><i class="fas fa-phone-square-alt"></i> 303-555-0136</p>
+            </footer>
+        </div>
+    </body>
 </html>
