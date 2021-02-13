@@ -26,16 +26,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap" rel="stylesheet">
         
-        <!-- Font Awesome icons -->
-        <script src="https://kit.fontawesome.com/ec66112225.js" crossorigin="anonymous"></script>
         <style>
             label.required {
                 font-weight: bold;
-            }
-
-            input[type=submit] {
-                margin-top: 20px;
-                margin-bottom: 20px;
             }
         </style>
     </head>
@@ -44,33 +37,44 @@
             <h1>The Victorian</h1>
         </header>
         <nav>
-            <a class="btn badge-pill btn-outline-light" href="index.html">Home</a>
-            <a class="btn badge-pill btn-outline-light" href="menu.html">Menu</a>
-            <a class="btn badge-pill btn-outline-light" href="">Contact Us</a>
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-home"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                <li class="nav-item"><a class="nav-link active" href="">Contact Us</a></li>
+            </ul>
         </nav>
         <div class="container mx-auto my-3">
             <div class="row">
                 <div class="col-10 mx-auto alert alert-info" role="alert">
                     Required fields are in bold.
                 </div>  
-                <form class="col-10 mx-auto">
+                <form id="contact" class="col-10 mx-auto needs-validation" onsubmit="return validateForm();" onreset="resetView();" novalidate>
                     <div class="form-group row">
                         <label class="col-form-label col-sm-4 text-sm-right required" for="name">Name:</label>
-                        <input class="form-control col-sm-8" id="name" type="text" name="name" required/>
+                        <input class="form-control col-sm-8" id="name" type="text" name="name" pattern="[A-Za-z]+" required />
+                        <div id="name-invalid-feedback" class="invalid-feedback offset-sm-4 col-sm-8">
+                            <!-- Inner HTML set from JavaScript form validation -->
+                        </div>
                     </div>
     
                     <div class="form-group row">
                         <label class="col-form-label col-sm-4 text-sm-right required" for="email">Email:</label>
-                        <input class="form-control col-sm-8" id="email" type="text" name="email" placeholder="name@example.com" required/>
+                        <input class="form-control col-sm-8" id="email" type="email" name="email" placeholder="name@example.com" required />
+                        <div id="email-invalid-feedback" class="invalid-feedback offset-sm-4 col-sm-8">
+                            <!-- Inner HTML set from JavaScript form validation -->
+                        </div>
                     </div>
     
                     <div class="form-group row">
-                        <label class="col-form-label col-sm-4 text-sm-right" for="phone">Phone:</label>
-                        <input class="form-control col-sm-8" id="phone" type="text" name="phone" />
+                        <label class="col-form-label col-sm-4 text-sm-right required" for="phone">Phone:</label>
+                        <input class="form-control col-sm-8" id="phone" type="tel" name="phone" minlength="1" maxlength="10" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required/>
+                        <div id="phone-invalid-feedback" class="invalid-feedback offset-sm-4 col-sm-8">
+                            <!-- Inner HTML set from JavaScript form validation -->
+                        </div>
                     </div>
     
                     <div class="form-group row">
-                        <label class="col-form-label col-sm-4 text-sm-right required" for="inquiry">Reason for Inquiry:</label>
+                        <label class="col-form-label col-sm-4 text-sm-right" for="inquiry">Reason for Inquiry:</label>
                         <select class="form-control col-sm-8" id="inquiry" name="inquiry">
                             <option value="catering" selected>Catering</option>
                             <option value="party">Private Party</option>
@@ -85,56 +89,72 @@
                     </div>
     
                     <fieldset class="form-group row">
-                        <label class="col-form-label col-sm-4 text-sm-right">Have you been to the restaurant?</label>
-    
+                        <label class="col-form-label col-sm-4 text-sm-right required">Have you been to the restaurant?</label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" id="choiceOne" type="radio" name="visited" value="No" />
+                            <input class="form-check-input" id="choiceOne" type="radio" name="past-customer" value="No" required />
                             <label class="form-check-label" for="choiceOne">No</label>
                         </div>
-    
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" id="choiceTwo" type="radio" name="visited" value="Yes" />
+                            <input class="form-check-input" id="choiceTwo" type="radio" name="past-customer" value="Yes" required />
                             <label class="form-check-label" for="choiceTwo">Yes</label>
+                        </div>
+                        <div id="past-customer-invalid-feedback" class="invalid-feedback offset-sm-4 col-sm-8">
+                            <!-- Inner HTML set from JavaScript form validation -->
                         </div>
                     </fieldset>
     
                     <fieldset class="form-group row">
-                        <label class="col-form-label col-sm-4 text-sm-right">Best days to contact you:</label>
-    
+                        <label class="col-form-label col-sm-4 text-sm-right required">Best days to contact you:</label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" id="monday" type="checkbox" name="contact" value="Monday" />
+                            <input class="form-check-input" id="monday" type="checkbox" name="contact-days" value="Monday" required />
                             <label class="form-check-label" for="monday">M</label>
                         </div>
-    
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" id="tuesday" type="checkbox" name="contact" value="Tuesday" />
+                            <input class="form-check-input" id="tuesday" type="checkbox" name="contact-days" value="Tuesday" required />
                             <label class="form-check-label" for="tuesday">T</label>
                         </div>
-    
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" id="wednesday" type="checkbox" name="contact" value="Wednesday" />
+                            <input class="form-check-input" id="wednesday" type="checkbox" name="contact-days" value="Wednesday" required />
                             <label class="form-check-label" for="wednesday">W</label>
                         </div>
-    
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" id="thursday" type="checkbox" name="contact" value="Thursday" />
+                            <input class="form-check-input" id="thursday" type="checkbox" name="contact-days" value="Thursday" required />
                             <label class="form-check-label" for="thursday">Th</label>
                         </div>
-    
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" id="friday" type="checkbox" name="contact" value="Friday" />
+                            <input class="form-check-input" id="friday" type="checkbox" name="contact-days" value="Friday" required />
                             <label class="form-check-label" for="friday">F</label>
                         </div>
+                        <div id="contact-days-invalid-feedback" class="invalid-feedback offset-sm-4 col-sm-8">
+                            <!-- Inner HTML set from JavaScript form validation -->
+                        </div>
                     </fieldset>
-                    <div class="row">
-                        <input class="mx-auto btn badge-pill btn-outline-dark" type="submit" value="Send Request"/>
+                    <div class="form-group row">
+                        <div class="col text-center">
+                            <input class="btn btn-primary badge-pill " type="submit" value="Send Request"/>
+                            <input class="btn btn-secondary badge-pill" type="reset" value="Reset"/>
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
         <footer>
-            <p><i class="fas fa-map-marker-alt"></i> 1557 Sweetwood Drive, Boulder, Colorado, 80302</p>
+            <p><i class="fas fa-map-marker-alt"></i> 1557 Sweetwood Drive, Boulder, CO, 80302</p>
             <p id="phone"><i class="fas fa-phone-square-alt"></i> 303-555-0136</p>
         </footer>
+
+        <!-- Bootstrap JS files CDN links copied from https://getbootstrap.com/docs/4.1/getting-started/download/ -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <!-- jQuery Input Mask plugin CDN links copied from https://cdnjs.com/libraries/jquery.inputmask -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous"></script>
+
+        <!-- Font Awesome icons -->
+        <script src="https://kit.fontawesome.com/ec66112225.js" crossorigin="anonymous"></script>
+
+        <!-- Form validation -->
+        <script src="scripts/formValidation.js"></script>
     </body>
 </html>

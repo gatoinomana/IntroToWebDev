@@ -19,15 +19,15 @@
         <!-- Default font -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+
         <!-- Restaurant name font -->
         <link rel="preconnect" href="https://fonts.gstatic.com"> 
         <link href="https://fonts.googleapis.com/css2?family=Modern+Antiqua&family=Noto+Sans+JP:wght@100;300&display=swap" rel="stylesheet">
+
         <!-- Headings font -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap" rel="stylesheet">
-        
-        <!-- Font Awesome icons -->
-        <script src="https://kit.fontawesome.com/ec66112225.js" crossorigin="anonymous"></script>
+
         <style>
             section {
                 background-color: #F2ECE3;
@@ -53,9 +53,11 @@
             <h1>The Victorian</h1>
         </header>
         <nav>
-            <a class="btn badge-pill btn-outline-light" href="index.html">Home</a>
-            <a class="btn badge-pill btn-outline-light" href="">Menu</a>
-            <a class="btn badge-pill btn-outline-light" href="contact.html">Contact Us</a>
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-home"></i></a></li>
+                <li class="nav-item"><a class="nav-link active" href="">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+            </ul>
         </nav>
         <div class="container">
             <div class="row">
@@ -166,8 +168,16 @@
             </div>
         </div>
         <footer>
-            <p><i class="fas fa-map-marker-alt"></i> 1557 Sweetwood Drive, Boulder, Colorado, 80302</p>
+            <p><i class="fas fa-map-marker-alt"></i> 1557 Sweetwood Drive, Boulder, CO, 80302</p>
             <p id="phone"><i class="fas fa-phone-square-alt"></i> 303-555-0136</p>
         </footer>
+
+        <!-- Bootstrap JS files CDN links copied from https://getbootstrap.com/docs/4.1/getting-started/download/-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <!-- Font Awesome icons -->
+        <script src="https://kit.fontawesome.com/ec66112225.js" crossorigin="anonymous"></script>
     </body>
 </html>

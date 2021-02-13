@@ -3,8 +3,8 @@ COLOR PALETTE
 --------------
 - whitesmoke                default background; header, footer and nav text 
 - darkslategray             default text
-- #3A4A9C (soft navy)       default links
-- #9E006C (dark magenta)    visited links
+- #3A4A9C (soft navy)       external links
+- #9E006C (dark magenta)    visited external links
 - #33364D (dark navy)       header, footer and nav background
 - #F0C800 (golden)          h1 text
 */
@@ -12,7 +12,7 @@ COLOR PALETTE
 body {
     font-family: 'Oxygen', sans-serif;
     background-color: whitesmoke; 
-    color: darkslategray;
+    color: #303030;
 }
 
 header, footer {
@@ -39,15 +39,23 @@ h1, h2 {
     font-family: 'Modern Antiqua', cursive;  
 }
 
-h3, h4, h5, h6 {
-    font-family: 'Charm', cursive;
-}
-
 nav {
     background-color: #33364D;
     border-top: thick double #F0C800;
     border-bottom: thick double #F0C800;
     padding: 10px 30px 10px 30px;
+}
+
+nav a {
+    color: whitesmoke;
+}
+
+nav a:hover {
+    color: #F0C800;
+}
+
+.nav-pills .nav-link.active { /* active nav tab */
+    background-color: #3A4A9C;
 }
 
 a[href*="//"] { /* External links only (href containing '//' of 'http://' or 'https://' */
@@ -66,6 +74,16 @@ a[href*="//"]:hover {
 
 a[href*="//"]:active {
     text-decoration: none;
+}
+
+img {
+    margin: 0px auto;
+    max-width: 100%;
+}
+
+.btn.btn-primary {
+    background-color: #3A4A9C;
+    border: none;
 }
 
 footer {
