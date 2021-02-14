@@ -1,9 +1,16 @@
+/*
+    Creator: Noelia Martinez
+    Date created: 13/02/2021
+    Last modified: 14/02/2021
+*/
+
 const form = document.getElementById("contact");
 const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const phoneInput = document.getElementById("phone");
 const contactDaysInput = document.getElementsByName("contact-days");
 const pastCustomerInput = document.getElementsByName("past-customer");
+const validFeedback = document.getElementById("valid-feedback");
 
 // Add US phone input mask to phone input
 $(document).ready(function(){
@@ -32,12 +39,16 @@ function validateForm() {
     
     // Hide Bootstrap validation styles from previous submission
     form.classList.add("needs-validation");
+    validFeedback.style = "display: none;";
 
     // Show Bootstrap validation styles for this submission
     if (!form.checkValidity()) {
         form.classList.add("was-validated");
         return false;
     }
+    // Temporarily show a 'form submitted correctly' message
+    validFeedback.style = "display: block;";
+    setTimeout(() => {validFeedback.style = "display: none;"}, 1500);
 
     // We always return false so that the form doesn't submit.
     // Submission causes the page to reload.
@@ -46,6 +57,7 @@ function validateForm() {
 
 // Remove all input and validation styles
 function resetView() {
+    validFeedback.style = "display: none;";
     form.classList.add("needs-validation");
     nameInput.focus();
 }
@@ -69,10 +81,10 @@ function validateEmail() {
     let feedback = "";
 
     if (emailInput.validity.valueMissing) {
-        feedback = "Email is required";
+        feedback = "Email address is required";
     }
     else if (emailInput.validity.typeMismatch) {
-        feedback = "The input must be a valid email address";
+        feedback = "The input is not a valid email address";
     } 
     invalidFeedback.innerHTML = feedback;
     emailInput.setCustomValidity(feedback);
@@ -83,10 +95,11 @@ function validatePhone() {
     let feedback = "";
 
     if (phoneInput.validity.valueMissing) {
-        feedback = "Phone is required";
+        feedback = "Phone number is required";
     }
-
-    // Format validity is taken care of by phone input mask (see $(document).ready function above)
+    else if (phoneInput.validity.tooShort) {
+        feedback = "Phone number must be a US number of 10 digits";
+    }
 
     invalidFeedback.innerHTML = feedback;
     phoneInput.setCustomValidity(feedback);
