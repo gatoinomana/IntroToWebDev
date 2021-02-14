@@ -12,34 +12,52 @@
 </head>
 <body>
     <div class="container mt-5 text-center">
-        <h1>Lucky Sevens</h1>
-        <form name="luckySevens" class="needs-validation" onsubmit="return validate();" novalidate>
-
-            <!-- Input -->
-            <div class="form-row">
-                <div class="form-group col">
-                    <label for="bet" class="col-form-label">Starting Bet: </label>
-                    
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">$</span>
-                          </div>
-                        <input id="bet" type="number" value="0.00" step=".01" class="form-control" required>
-
-                        <div class="invalid-feedback">
-                            Starting Bet is required and must be a positive number
-                        </div>
+        <h1 class="mb-4">Lucky Sevens</h1>
+        <form name="lucky-sevens" class="needs-validation" onsubmit="return validate();" novalidate onreset="resetView();">
+            <!-- Bet Input -->
+            <div class="form-group row">
+                <label for="bet-input" class="col-form-label required text-right col-6">Starting Bet:</label>
+                <div class="input-group col-6 col-sm-5 col-md-4 col-bg-3">
+                    <!-- Show dollar unit -->
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">&#36;</span>
                     </div>
+                    <input id="bet-input" class="form-control" type="number" name="bet" value="0.00" step=".01" min="0.01" required />
+                </div>
+                <!-- Validation feedback -->
+                <div id="bet-invalid-feedback" class="invalid-feedback offset-6 col-sm-5 col-md-4 col-bg-3">
+                    You must bet more than &#36;0.00
                 </div>
             </div>
-
             <!-- Play Button -->
-            <div class="form-row">
-                <div class="form-group col">
+            <div class="form-group row">
+                <div class="col text-center">
                     <button type="submit" id="submitButton" class="btn btn-primary">Play</button>
+                    <button type="reset" id="resetButton" class="btn btn-secondary">Reset</button>
                 </div>
             </div>
         </form>
+        <hr />
+        <table id="results" class="table table-bordered table-striped table-hover" style="display: none; width: fit-content; padding: 0; margin: 0 auto;">
+            <tbody>
+                <tr>
+                    <td>Starting Bet</td>
+                    <td>&#36;<span id="starting-bet"></span></td>
+                </tr>
+                <tr>
+                    <td>Total Rolls Before Going Broke</td>
+                    <td><span id="rolls-before-broke"></span></td>
+                </tr>
+                <tr>
+                    <td>Highest Amount Won</td>
+                    <td>&#36;<span id="max-money"></span></td>
+                </tr>
+                <tr>
+                    <td>Roll Count at Highest Amount Won</td>
+                    <td><span id="rolls-max-money"></span></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <script src="luckySevens.js"></script>
 </body>
